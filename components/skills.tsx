@@ -17,10 +17,10 @@ const skillCategories = [
     color: "from-emerald-400/20 to-teal-400/5",
     skills: [
       { name: "Functional Testing", level: 95 },
-      { name: "Regression Testing", level: 90 },
+      { name: "Regression Testing", level: 95 },
       { name: "Smoke Testing", level: 92 },
-      { name: "System Integration Testing", level: 85 },
-      { name: "UAT", level: 88 },
+      { name: "System Integration Testing", level: 95 },
+      { name: "UAT", level: 92 },
       { name: "End-to-End Testing", level: 93 },
     ],
   },
@@ -30,8 +30,8 @@ const skillCategories = [
     color: "from-cyan-400/20 to-blue-400/5",
     skills: [
       { name: "Cypress", level: 90 },
-      { name: "Selenium (Basic)", level: 65 },
-      { name: "JMeter", level: 75 },
+      { name: "Selenium (Basic)", level: 75 },
+      { name: "JMeter", level: 858 },
       { name: "Postman", level: 88 },
       { name: "REST API Testing", level: 85 },
     ],
@@ -69,7 +69,7 @@ const skillCategories = [
     color: "from-rose-400/20 to-pink-400/5",
     skills: [
       { name: "Web Testing", level: 93 },
-      { name: "Mobile Testing (Android & iOS)", level: 85 },
+      { name: "Mobile Testing (Android & iOS)", level: 95 },
       { name: "SQL", level: 72 },
       { name: "MySQL", level: 70 },
     ],
