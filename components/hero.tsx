@@ -15,7 +15,7 @@ export function Hero() {
         className="max-w-4xl"
       >
         <span className="section-label mb-6 inline-block">
-          Quality Assurance Engineer · 001
+          Quality Assurance Engineer
         </span>
 
         <h1 className="text-balance text-6xl font-bold tracking-tight text-foreground sm:text-8xl lg:text-9xl">

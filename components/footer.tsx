@@ -32,7 +32,7 @@ export function Footer() {
           </p>
 
           <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground/40">
-            &copy; 2024 All rights reserved.
+            &copy; 2026 All rights reserved.
           </p>
         </div>
       </motion.div>

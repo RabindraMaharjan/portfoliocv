@@ -5,40 +5,38 @@ import { motion } from "framer-motion";
 export function BackgroundGlow() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none select-none">
-      {/* Liquid Glow One */}
+      {/* Liquid Mesh - Teal */}
       <motion.div
         animate={{
-          x: [0, 100, 0],
-          y: [0, 50, 0],
-          scale: [1, 1.4, 1],
-          opacity: [0.03, 0.08, 0.03],
+          x: [0, 80, 0],
+          y: [0, 40, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-emerald-500/[0.04] dark:bg-emerald-400/[0.03] blur-[140px]"
+      />
+
+      {/* Liquid Mesh - Indigo */}
+      <motion.div
+        animate={{
+          x: [0, -80, 0],
+          y: [0, 80, 0],
+          scale: [1.2, 1, 1.2],
         }}
         transition={{
           duration: 25,
           repeat: Infinity,
           ease: "linear",
         }}
-        className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-foreground/20 blur-[180px]"
+        className="absolute bottom-[10%] -right-[5%] w-[50%] h-[50%] rounded-full bg-indigo-500/[0.04] dark:bg-indigo-400/[0.02] blur-[160px]"
       />
 
-      {/* Liquid Glow Two */}
-      <motion.div
-        animate={{
-          x: [0, -100, 0],
-          y: [0, 100, 0],
-          scale: [1.2, 1, 1.2],
-          opacity: [0.02, 0.06, 0.02],
-        }}
-        transition={{
-          duration: 30,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute -bottom-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-foreground/15 blur-[200px]"
-      />
-
-      {/* Center Subtle Fade */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_90%)]" />
+      {/* Center Vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_85%)]" />
     </div>
   );
 }
