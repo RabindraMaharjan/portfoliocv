@@ -10,12 +10,16 @@ import { Workflow } from "@/components/workflow";
 import { Skills } from "@/components/skills";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
+import { Spotlight } from "@/components/spotlight";
+import { BackgroundGlow } from "@/components/background-glow";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen selection:bg-foreground selection:text-background">
-      {/* Subtle background texture */}
-      <div className="fixed inset-0 -z-10 bg-dots opacity-[0.03] dark:opacity-[0.05]" />
+    <div className="relative min-h-screen selection:bg-foreground selection:text-background transition-colors duration-500">
+      {/* Background Layering */}
+      <BackgroundGlow />
+      <div className="fixed inset-0 -z-10 bg-dots opacity-[0.02] dark:opacity-[0.04]" />
+      <Spotlight />
 
       <Navigation />
 

@@ -45,7 +45,7 @@ export function Projects() {
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group glass relative flex flex-col justify-between overflow-hidden rounded-3xl p-8 transition-all hover:border-primary/20"
+            className="group glass relative flex flex-col justify-between overflow-hidden rounded-[2rem] p-8 transition-all hover:border-primary/20 dark:hover:bg-white/[0.02] hover:bg-black/[0.02]"
           >
             <div>
               <div className="flex items-start justify-between">

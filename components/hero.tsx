@@ -17,8 +17,8 @@ export function Hero() {
         </span>
 
         <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-7xl lg:text-8xl">
-          Rabindra <br />
-          <span className="text-muted-foreground">Maharjan</span>
+          <span className="text-gradient">Rabindra</span> <br />
+          <span className="text-muted-foreground/60">Maharjan</span>
         </h1>
 
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">

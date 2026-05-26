@@ -26,8 +26,8 @@ export function Navigation() {
       <nav
         className={`flex items-center gap-1 rounded-full px-2 py-1.5 transition-all duration-500 pointer-events-auto ${
           scrolled
-            ? "glass shadow-2xl scale-100 bg-card/60"
-            : "bg-background/40 backdrop-blur-md border border-border/40 scale-100"
+            ? "glass shadow-[0_20px_50px_rgba(0,0,0,0.3)] scale-100 bg-card/60 backdrop-blur-3xl"
+            : "bg-transparent scale-100"
         }`}
       >
         <Link href="/" className="px-4 py-2 text-sm font-bold tracking-tighter hover:text-primary transition-colors">

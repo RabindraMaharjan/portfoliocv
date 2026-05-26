@@ -71,7 +71,7 @@ export function Experience() {
             </div>
 
             {/* Right side: Card */}
-            <div className="glass rounded-3xl p-8 transition-all hover:border-primary/20 dark:hover:border-white/10 text-left">
+            <div className="glass rounded-[2rem] p-8 transition-all hover:border-primary/20 dark:hover:border-white/10 dark:hover:bg-white/[0.02] hover:bg-black/[0.02] text-left">
               <h3 className="text-xl font-bold tracking-tight text-foreground">{exp.role}</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {exp.description}

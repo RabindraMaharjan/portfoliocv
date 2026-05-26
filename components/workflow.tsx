@@ -56,7 +56,7 @@ export function Workflow() {
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group glass relative overflow-hidden rounded-3xl p-6 transition-all hover:border-primary/20"
+            className="group glass relative overflow-hidden rounded-[2rem] p-6 transition-all hover:border-primary/20 dark:hover:bg-white/[0.02] hover:bg-black/[0.02]"
           >
             <div className={`mb-4 inline-flex rounded-xl border p-2 ${tool.color}`}>
               <tool.icon size={20} />

@@ -40,7 +40,7 @@ export function Education() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ y: -4 }}
-            className="glass group relative overflow-hidden rounded-3xl p-8 transition-all hover:border-primary/20 dark:hover:border-white/10"
+            className="glass group relative overflow-hidden rounded-[2rem] p-8 transition-all hover:border-primary/20 dark:hover:border-white/10 dark:hover:bg-white/[0.02] hover:bg-black/[0.02]"
           >
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
               <div className="flex flex-col gap-1">
