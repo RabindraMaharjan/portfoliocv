@@ -5,6 +5,7 @@ import { Navigation } from "@/components/navigation";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
 import { Experience } from "@/components/experience";
+import { Education } from "@/components/education";
 import { Workflow } from "@/components/workflow";
 import { Skills } from "@/components/skills";
 import { Contact } from "@/components/contact";
@@ -12,7 +13,7 @@ import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen selection:bg-primary/10 selection:text-primary">
+    <div className="relative min-h-screen selection:bg-foreground selection:text-background">
       {/* Subtle background texture */}
       <div className="fixed inset-0 -z-10 bg-dots opacity-[0.03] dark:opacity-[0.05]" />
 
@@ -21,10 +22,11 @@ export default function Home() {
       <main className="mx-auto max-w-screen-xl px-6 md:px-12 lg:px-24">
         <Hero />
 
-        <div className="space-y-32 py-24">
+        <div className="space-y-40 py-24">
           <About />
           <Projects />
           <Experience />
+          <Education />
           <Workflow />
           <Skills />
           <Contact />

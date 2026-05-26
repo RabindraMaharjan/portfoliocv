@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { ModeToggle } from "./mode-toggle";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#experience" },
+  { label: "Work", href: "#work" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -22,39 +22,41 @@ export function Navigation() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ${
-        scrolled ? "py-4" : "py-6"
-      }`}
-    >
+    <header className="fixed top-8 left-0 right-0 z-50 flex justify-center px-6">
       <nav
-        className={`flex items-center gap-2 rounded-full px-4 py-2 transition-all duration-300 ${
+        className={`flex items-center gap-1 rounded-full px-2 py-1.5 transition-all duration-500 ${
           scrolled
-            ? "glass shadow-2xl shadow-background/50 scale-100"
-            : "bg-transparent scale-105"
+            ? "glass shadow-2xl scale-100"
+            : "bg-transparent scale-100"
         }`}
       >
-        <Link href="/" className="px-3 py-1 text-sm font-bold tracking-tighter">
+        <Link href="/" className="px-4 py-2 text-sm font-black tracking-tighter">
           RM<span className="text-muted-foreground">.</span>
         </Link>
-
-        <div className="mx-2 h-4 w-[1px] bg-border/50" />
 
         <div className="hidden items-center gap-1 sm:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-1 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-muted/50"
+              className="rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground transition-all hover:text-foreground hover:bg-white/[0.05]"
             >
               {item.label}
             </Link>
           ))}
         </div>
 
-        <div className="mx-2 h-4 w-[1px] bg-border/50 sm:hidden" />
+        <div className="h-4 w-[1px] bg-white/10 mx-2" />
 
-        <ModeToggle />
+        <div className="flex items-center gap-1">
+          <ModeToggle />
+          <Link
+            href="/resume.pdf"
+            className="hidden rounded-full bg-foreground px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-background transition-transform active:scale-95 sm:block"
+          >
+            Resume
+          </Link>
+        </div>
       </nav>
     </header>
   );
