@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rabindramaharjan.com.np'), // Replace with your actual domain
   title: 'Rabindra Maharjan — QA Engineer',
   description: 'Quality Assurance Engineer with 4+ years of experience in software testing, automation, and quality processes. Specializing in Cypress, Selenium, and enterprise software testing.',
   keywords: ['QA Engineer', 'Quality Assurance', 'Software Testing', 'Cypress', 'Selenium', 'Automation Testing', 'Rabindra Maharjan'],
@@ -51,10 +53,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`bg-background ${inter.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased selection:bg-primary/30 selection:text-foreground">
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          {process.env.NODE_ENV === 'production' && <Analytics />}
+        </ThemeProvider>
       </body>
     </html>
   )

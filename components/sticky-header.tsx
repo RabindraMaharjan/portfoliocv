@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { ModeToggle } from "./mode-toggle";
 
 const navItems = [
   { label: "ABOUT", href: "#about" },
@@ -116,29 +117,34 @@ export function StickyHeader() {
         </nav>
       </div>
 
-      {/* Social links */}
-      <motion.ul
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-        className="ml-1 mt-8 flex items-center gap-5"
-        aria-label="Social media"
-      >
-        {socialLinks.map((link) => (
-          <li key={link.label}>
-            <a
-              href={link.href}
-              target={link.href.startsWith("http") ? "_blank" : undefined}
-              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group relative block p-2 text-muted-foreground transition-all hover:text-primary"
-              aria-label={link.label}
-            >
-              <span className="absolute inset-0 rounded-lg bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
-              <link.icon size={20} strokeWidth={1.5} className="relative transition-transform duration-300 group-hover:-translate-y-0.5" />
-            </a>
-          </li>
-        ))}
-      </motion.ul>
+      {/* Social links & Theme Toggle */}
+      <div className="mt-8 flex items-center justify-between">
+        <motion.ul
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="ml-1 flex items-center gap-5"
+          aria-label="Social media"
+        >
+          {socialLinks.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="group relative block p-2 text-muted-foreground transition-all hover:text-primary"
+                aria-label={link.label}
+              >
+                <span className="absolute inset-0 rounded-lg bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+                <link.icon size={20} strokeWidth={1.5} className="relative transition-transform duration-300 group-hover:-translate-y-0.5" />
+              </a>
+            </li>
+          ))}
+        </motion.ul>
+        <div className="mr-6">
+          <ModeToggle />
+        </div>
+      </div>
     </header>
   );
 }
