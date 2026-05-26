@@ -41,20 +41,7 @@ export function Footer() {
               className="font-medium text-foreground hover:text-primary transition-colors"
             >
               Tailwind CSS
-            </a>
-            , deployed on{" "}
-            <a
-              href="https://vercel.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-foreground hover:text-primary transition-colors"
-            >
-              Vercel
-            </a>
-            .
-          </p>
-          <p className="text-[11px] text-muted-foreground/40 font-mono">
-            Set in Inter · Animated with Framer Motion
+            </a>.
           </p>
         </div>
       </motion.div>
