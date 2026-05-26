@@ -4,44 +4,35 @@ import { motion } from "framer-motion";
 
 export function Footer() {
   return (
-    <footer className="pb-16 pt-8">
+    <footer className="pb-24 pt-12">
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
       >
         {/* Divider */}
-        <div className="mb-8 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+        <div className="mb-12 h-px bg-border/40" />
 
-        <div className="space-y-3">
-          <p className="text-xs text-muted-foreground leading-relaxed">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground/60">
             Designed &amp; built by{" "}
             <a
               href="https://linkedin.com/in/rabindra-maharjan"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-muted-foreground transition-colors"
             >
               Rabindra Maharjan
             </a>
             {" "}with{" "}
-            <a
-              href="https://nextjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-foreground hover:text-primary transition-colors"
-            >
-              Next.js
-            </a>
+            <span className="text-foreground">Next.js</span>
             {" "}&amp;{" "}
-            <a
-              href="https://tailwindcss.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-foreground hover:text-primary transition-colors"
-            >
-              Tailwind CSS
-            </a>.
+            <span className="text-foreground">Tailwind CSS</span>.
+          </p>
+
+          <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground/40">
+            &copy; 2024 All rights reserved.
           </p>
         </div>
       </motion.div>

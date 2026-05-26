@@ -48,32 +48,33 @@ export function Experience() {
 
   return (
     <section id="experience" className="scroll-mt-32">
-      <div className="mb-16 text-left">
-        <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
+      <div className="mb-20 text-left">
+        <h2 className="section-label">
           Professional Trajectory
         </h2>
       </div>
 
-      <div className="space-y-12">
+      <div className="space-y-16">
         {experiences.map((exp, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="group relative grid gap-8 md:grid-cols-[200px_1fr]"
+            transition={{ type: "spring", stiffness: 100, damping: 20, delay: i * 0.1 }}
+            className="group relative grid gap-8 md:grid-cols-[240px_1fr]"
           >
             {/* Left side: Company & Time */}
-            <div className="flex flex-col gap-1 text-left">
+            <div className="flex flex-col gap-1.5 text-left">
               <span className="text-sm font-bold tracking-tight text-foreground">{exp.company}</span>
-              <span className="text-xs font-mono text-muted-foreground">{exp.period}</span>
-              <span className="text-[10px] uppercase tracking-widest text-muted-foreground/60">{exp.location}</span>
+              <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-muted-foreground">{exp.period}</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/40">{exp.location}</span>
             </div>
 
             {/* Right side: Card */}
-            <div className="glass rounded-[2rem] p-8 transition-all hover:border-primary/20 dark:hover:border-white/10 dark:hover:bg-white/[0.02] hover:bg-black/[0.02] text-left">
-              <h3 className="text-xl font-bold tracking-tight text-foreground">{exp.role}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <div className="glass rounded-[2rem] p-10 transition-all hover:border-primary/20 dark:hover:border-white/10 dark:hover:bg-white/[0.01] hover:bg-black/[0.01] text-left">
+              <h3 className="text-2xl font-bold tracking-tight text-foreground">{exp.role}</h3>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground font-medium">
                 {exp.description}
               </p>
 
@@ -83,13 +84,13 @@ export function Experience() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 25 }}
                     className="overflow-hidden"
                   >
-                    <ul className="mt-6 space-y-3 border-t border-border/50 pt-6">
+                    <ul className="mt-8 space-y-4 border-t border-border/40 pt-8">
                       {exp.details.map((detail, dIdx) => (
-                        <li key={dIdx} className="flex items-start gap-3 text-xs leading-relaxed text-muted-foreground">
-                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />
+                        <li key={dIdx} className="flex items-start gap-4 text-xs leading-relaxed text-muted-foreground/80 font-medium">
+                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-foreground/30" />
                           {detail}
                         </li>
                       ))}
@@ -98,10 +99,10 @@ export function Experience() {
                 )}
               </AnimatePresence>
 
-              <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
-                <div className="flex flex-wrap gap-2">
+              <div className="mt-10 flex flex-wrap items-center justify-between gap-6">
+                <div className="flex flex-wrap gap-2.5">
                   {exp.stack.map((s) => (
-                    <span key={s} className="rounded-full bg-muted/50 px-2.5 py-0.5 text-[10px] font-mono text-muted-foreground border border-white/5">
+                    <span key={s} className="rounded-full bg-muted/40 px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-muted-foreground border border-white/5">
                       {s}
                     </span>
                   ))}
@@ -109,7 +110,7 @@ export function Experience() {
 
                 <button
                   onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
-                  className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-primary hover:text-foreground transition-colors"
+                  className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-foreground hover:text-muted-foreground transition-colors"
                 >
                   {expandedIndex === i ? (
                     <>Show Less <ChevronUp size={14} /></>
