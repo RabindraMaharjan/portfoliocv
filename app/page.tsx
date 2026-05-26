@@ -3,7 +3,9 @@
 import { Hero } from "@/components/hero";
 import { Navigation } from "@/components/navigation";
 import { About } from "@/components/about";
+import { Projects } from "@/components/projects";
 import { Experience } from "@/components/experience";
+import { Workflow } from "@/components/workflow";
 import { Skills } from "@/components/skills";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
@@ -21,7 +23,9 @@ export default function Home() {
 
         <div className="space-y-32 py-24">
           <About />
+          <Projects />
           <Experience />
+          <Workflow />
           <Skills />
           <Contact />
         </div>
