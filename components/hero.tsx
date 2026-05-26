@@ -13,7 +13,7 @@ export function Hero() {
         className="max-w-3xl"
       >
         <span className="mb-4 inline-block font-mono text-xs tracking-widest text-muted-foreground uppercase">
-          QA Engineer · Obsidian Liquid Glass
+          QA Engineer
         </span>
 
         <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-7xl lg:text-8xl">
