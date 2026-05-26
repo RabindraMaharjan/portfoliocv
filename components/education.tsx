@@ -4,10 +4,22 @@ import { motion } from "framer-motion";
 
 const education = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    school: "Tribhuvan University",
-    period: "2016 — 2020",
-    description: "Specialized in Software Engineering and Quality Management Systems.",
+    degree: "Bachelor of Information and Communication Technology (BICT)",
+    school: "Virinchi College",
+    grade: "CGPA: 3.40",
+    description: "In-depth study of information systems, communication technologies, and software engineering principles.",
+  },
+  {
+    degree: "Higher Secondary (Science)",
+    school: "DAV College",
+    grade: "Second Division",
+    description: "Focused on Physics, Chemistry, and Mathematics.",
+  },
+  {
+    degree: "Secondary Education",
+    school: "Deepmala Secondary English Boarding School",
+    grade: "First Division",
+    description: "General science and mathematics foundation.",
   },
 ];
 
@@ -27,14 +39,18 @@ export function Education() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass group relative overflow-hidden rounded-3xl p-8 transition-all"
+            whileHover={{ y: -4 }}
+            className="glass group relative overflow-hidden rounded-3xl p-8 transition-all hover:border-primary/20 dark:hover:border-white/10"
           >
-            <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-              <div>
-                <h3 className="text-xl font-bold tracking-tight text-foreground">{edu.degree}</h3>
-                <p className="text-muted-foreground">{edu.school}</p>
+            <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
+              <div className="flex flex-col gap-1">
+                <h3 className="text-xl font-bold tracking-tight text-foreground leading-snug">{edu.degree}</h3>
+                <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground/80">
+                  <span>{edu.school}</span>
+                  <span className="h-1 w-1 rounded-full bg-border" />
+                  <span className="text-primary/80 font-mono text-xs">{edu.grade}</span>
+                </div>
               </div>
-              <span className="text-xs font-mono text-muted-foreground">{edu.period}</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground max-w-2xl">
               {edu.description}

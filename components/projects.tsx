@@ -30,8 +30,8 @@ const projects = [
 export function Projects() {
   return (
     <section id="work" className="scroll-mt-32">
-      <div className="mb-12">
-        <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="mb-16">
+        <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
           Selected Work
         </h2>
       </div>
@@ -43,6 +43,7 @@ export function Projects() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            whileHover={{ y: -5 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="group glass relative flex flex-col justify-between overflow-hidden rounded-3xl p-8 transition-all hover:border-primary/20"
           >
@@ -62,7 +63,7 @@ export function Projects() {
             </div>
 
             <div className="mt-8">
-              <div className="mb-4 text-[10px] font-mono uppercase tracking-widest text-primary/80">
+              <div className="mb-4 text-[10px] font-mono uppercase tracking-[0.2em] text-primary/80 font-bold">
                 Impact: {project.impact}
               </div>
               <div className="flex flex-wrap gap-2">

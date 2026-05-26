@@ -1,14 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { Mail, ArrowUpRight, Copy, Check } from "lucide-react";
+import { useState } from "react";
 
 const EMAIL = "ravinmaharjan1@gmail.com";
 
 export function Contact() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [copied, setCopied] = useState(false);
 
   const copyEmail = async () => {
@@ -22,96 +20,68 @@ export function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      ref={ref}
-      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-      aria-label="Contact"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
-        className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-      >
-        <h2 className="text-sm font-bold uppercase tracking-widest text-foreground lg:sr-only">
-          Contact
+    <section id="contact" className="scroll-mt-32">
+      <div className="mb-16">
+        <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
+          Let&apos;s Connect
         </h2>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.1 }}
-      >
-        {/* Gradient card */}
-        <div className="relative rounded-2xl border border-border/40 bg-gradient-to-br from-card/80 to-card/30 p-8 sm:p-10 overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/[0.04] rounded-full blur-[80px] -translate-y-1/2 translate-x-1/4" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/[0.03] rounded-full blur-[60px] translate-y-1/3 -translate-x-1/4" />
+      <div className="glass rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+        {/* Subtle accent blur */}
+        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
 
-          <div className="relative">
-            <h3 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Get In Touch
-            </h3>
+        <div className="relative max-w-2xl">
+          <h3 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Have an opportunity in mind?
+          </h3>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            I am currently open to new roles where I can apply my 4+ years of
+            QA expertise to build robust software systems.
+          </p>
 
-            <p className="mb-6 text-muted-foreground leading-relaxed max-w-md">
-              I&apos;m currently looking for new opportunities. Whether you have a question,
-              want to discuss potential collaboration, or just want to say hi, my inbox is
-              always open.
-            </p>
-
-            {/* Email with copy */}
-            <div className="mb-8 flex items-center gap-3">
-              <code className="text-sm font-mono text-primary/80 bg-primary/[0.06] px-3 py-1.5 rounded-lg border border-primary/10">
-                {EMAIL}
-              </code>
-              <button
-                onClick={copyEmail}
-                className="inline-flex items-center justify-center h-8 w-8 rounded-lg bg-primary/[0.06] text-primary/60 hover:text-primary hover:bg-primary/[0.12] border border-primary/10 transition-all"
-                aria-label="Copy email address"
-              >
-                {copied ? <Check size={14} /> : <Copy size={14} />}
-              </button>
-              {copied && (
-                <motion.span
-                  initial={{ opacity: 0, x: -5 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0 }}
-                  className="text-xs text-primary"
+          <div className="mt-8 flex flex-col gap-6">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-muted/50 text-foreground border border-border/50">
+                <Mail size={20} />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">Email</span>
+                <button
+                  onClick={copyEmail}
+                  className="flex items-center gap-2 text-lg font-medium text-foreground hover:text-primary transition-colors group"
                 >
-                  Copied!
-                </motion.span>
-              )}
+                  {EMAIL}
+                  {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />}
+                </button>
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4 mt-4">
               <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href={`mailto:${EMAIL}`}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground transition-shadow hover:shadow-[0_0_30px_oklch(0.75_0.18_180_/_0.3)]"
-                whileHover={{ y: -2, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-sm font-bold text-background transition-all"
               >
-                <Mail className="h-4 w-4" />
-                Say Hello
-                <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                Send message
+                <ArrowUpRight size={18} />
               </motion.a>
 
               <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="https://linkedin.com/in/rabindra-maharjan"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-border px-7 py-3.5 text-sm font-medium text-foreground transition-all hover:bg-secondary hover:border-primary/30"
-                whileHover={{ y: -2, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-transparent px-8 py-4 text-sm font-bold text-foreground transition-all hover:bg-muted/50"
               >
-                Connect on LinkedIn
-                <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                LinkedIn
+                <ArrowUpRight size={18} className="text-muted-foreground" />
               </motion.a>
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

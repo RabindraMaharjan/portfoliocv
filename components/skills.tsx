@@ -21,8 +21,8 @@ const skillCategories = [
 export function Skills() {
   return (
     <section id="skills" className="scroll-mt-32">
-      <div className="mb-12">
-        <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="mb-16">
+        <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
           Core Capabilities
         </h2>
       </div>
@@ -34,8 +34,9 @@ export function Skills() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            whileHover={{ y: -5 }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className="glass rounded-3xl p-8"
+            className="glass rounded-3xl p-8 hover:border-primary/20 transition-all"
           >
             <h3 className="mb-6 font-bold tracking-tight">{category.title}</h3>
             <div className="grid gap-3">

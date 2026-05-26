@@ -5,15 +5,15 @@ import { ArrowUpRight, FileText } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[90vh] flex-col justify-center px-6 py-20 lg:px-0">
+    <section className="relative flex min-h-[90vh] flex-col justify-center py-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="max-w-3xl"
       >
-        <span className="mb-4 inline-block font-mono text-sm tracking-widest text-muted-foreground uppercase">
-          QA Engineer
+        <span className="mb-4 inline-block font-mono text-xs tracking-widest text-muted-foreground uppercase">
+          QA Engineer · Obsidian Liquid Glass
         </span>
 
         <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-7xl lg:text-8xl">
@@ -29,20 +29,21 @@ export function Hero() {
 
         <div className="mt-12 flex flex-wrap gap-4">
           <motion.a
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            href="#experience"
-            className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="#work"
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-sm font-bold text-background transition-all hover:bg-foreground/90"
           >
             Explore work
             <ArrowUpRight size={18} />
           </motion.a>
 
           <motion.a
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.05, backgroundColor: "var(--muted)" }}
+            whileTap={{ scale: 0.95 }}
             href="/resume.pdf"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-transparent px-8 py-3.5 text-sm font-medium text-foreground transition-all hover:bg-muted/50"
+            target="_blank"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-transparent px-8 py-4 text-sm font-bold text-foreground transition-all"
           >
             Open resume
             <FileText size={18} className="text-muted-foreground" />
@@ -57,17 +58,17 @@ export function Hero() {
         transition={{ delay: 0.4, duration: 1 }}
         className="mt-24 grid grid-cols-2 gap-8 border-t border-border/50 pt-8 sm:grid-cols-3 lg:grid-cols-4"
       >
-        <div>
-          <div className="text-2xl font-bold tabular-nums">4+ Years</div>
-          <div className="text-xs font-mono uppercase tracking-wider text-muted-foreground">QA Experience</div>
+        <div className="flex flex-col gap-1">
+          <div className="text-2xl font-bold tabular-nums tracking-tight">4+ Years</div>
+          <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground">QA Experience</div>
         </div>
-        <div>
-          <div className="text-2xl font-bold tabular-nums">50+</div>
-          <div className="text-xs font-mono uppercase tracking-wider text-muted-foreground">Products Tested</div>
+        <div className="flex flex-col gap-1">
+          <div className="text-2xl font-bold tabular-nums tracking-tight">50+</div>
+          <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground">Products Tested</div>
         </div>
-        <div>
-          <div className="text-2xl font-bold tabular-nums">Enterprise</div>
-          <div className="text-xs font-mono uppercase tracking-wider text-muted-foreground">Software Focus</div>
+        <div className="flex flex-col gap-1">
+          <div className="text-2xl font-bold tabular-nums tracking-tight">Enterprise</div>
+          <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground">Software Focus</div>
         </div>
       </motion.div>
     </section>

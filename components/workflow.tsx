@@ -37,8 +37,8 @@ const tools = [
 export function Workflow() {
   return (
     <section id="workflow" className="scroll-mt-32">
-      <div className="mb-12">
-        <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="mb-16">
+        <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
           AI-Augmented QA Workflow
         </h2>
         <p className="mt-4 max-w-xl text-muted-foreground">
@@ -54,6 +54,7 @@ export function Workflow() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            whileHover={{ y: -5 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="group glass relative overflow-hidden rounded-3xl p-6 transition-all hover:border-primary/20"
           >
@@ -62,7 +63,7 @@ export function Workflow() {
             </div>
 
             <h3 className="font-bold tracking-tight">{tool.name}</h3>
-            <div className="mt-1 text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
+            <div className="mt-1 text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60">
               {tool.role}
             </div>
 

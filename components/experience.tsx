@@ -6,7 +6,7 @@ const experiences = [
   {
     period: "Nov 2023 — Present",
     company: "Wealthlane Financial Inc",
-    location: "Remote / Canada",
+    location: "Remote / Nepal",
     role: "QA Engineer",
     description: "Orchestrating quality assurance for high-fidelity financial systems. Focused on end-to-end reliability, automated regression infrastructure, and cross-platform mobile verification.",
     stack: ["Cypress", "Selenium", "Mobile QA", "Agile"],
