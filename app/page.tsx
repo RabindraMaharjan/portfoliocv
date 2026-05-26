@@ -2,39 +2,32 @@
 
 import { Hero } from "@/components/hero";
 import { Navigation } from "@/components/navigation";
-import { Spotlight } from "@/components/spotlight";
-import { MeshBackground } from "@/components/mesh-background";
-import { StickyHeader } from "@/components/sticky-header";
 import { About } from "@/components/about";
 import { Experience } from "@/components/experience";
 import { Skills } from "@/components/skills";
-import { Education } from "@/components/education";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen font-sans noise-bg">
-      <MeshBackground />
-      <Spotlight />
+    <div className="relative min-h-screen selection:bg-primary/10 selection:text-primary">
+      {/* Subtle background texture */}
+      <div className="fixed inset-0 -z-10 bg-dots opacity-[0.03] dark:opacity-[0.05]" />
+
       <Navigation />
 
-      <Hero />
+      <main className="mx-auto max-w-screen-xl px-6 md:px-12 lg:px-24">
+        <Hero />
 
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
-        <div className="lg:flex lg:justify-between lg:gap-4">
-          <StickyHeader />
-
-          <main id="content" className="pt-24 lg:w-1/2 lg:py-24">
-            <About />
-            <Experience />
-            <Skills />
-            <Education />
-            <Contact />
-            <Footer />
-          </main>
+        <div className="space-y-32 py-24">
+          <About />
+          <Experience />
+          <Skills />
+          <Contact />
         </div>
-      </div>
+
+        <Footer />
+      </main>
     </div>
   );
 }
