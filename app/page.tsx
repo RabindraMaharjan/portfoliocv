@@ -3,6 +3,7 @@
 import { Hero } from "@/components/hero";
 import { Navigation } from "@/components/navigation";
 import { Spotlight } from "@/components/spotlight";
+import { MeshBackground } from "@/components/mesh-background";
 import { StickyHeader } from "@/components/sticky-header";
 import { About } from "@/components/about";
 import { Experience } from "@/components/experience";
@@ -14,6 +15,7 @@ import { Footer } from "@/components/footer";
 export default function Home() {
   return (
     <div className="relative min-h-screen font-sans noise-bg">
+      <MeshBackground />
       <Spotlight />
       <Navigation />
 
